@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[My Octopress Blog]]></title>
+  <link href="http://tipter.github.com/atom.xml" rel="self"/>
+  <link href="http://tipter.github.com/"/>
+  <updated>2013-03-14T18:26:11+02:00</updated>
+  <id>http://tipter.github.com/</id>
+  <author>
+    <name><![CDATA[Your Name]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[1st post]]></title>
+    <link href="http://tipter.github.com/blog/2013/03/14/1st-post/"/>
+    <updated>2013-03-14T18:26:00+02:00</updated>
+    <id>http://tipter.github.com/blog/2013/03/14/1st-post</id>
+    <content type="html"><![CDATA[
+]]></content>
+  </entry>
+  
+</feed>
