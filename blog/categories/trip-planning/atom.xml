@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[The Tipter Blog]]></title>
-  <link href="http://tipter.github.com/atom.xml" rel="self"/>
+  <title><![CDATA[Category: Trip Planning | The Tipter Blog]]></title>
+  <link href="http://tipter.github.com/blog/categories/trip-planning/atom.xml" rel="self"/>
   <link href="http://tipter.github.com/"/>
   <updated>2013-05-08T18:41:01+03:00</updated>
   <id>http://tipter.github.com/</id>
@@ -18,11 +18,11 @@
     <link href="http://tipter.github.com/blog/2013/05/08/does-the-world-needs-another-travel-web-app/"/>
     <updated>2013-05-08T15:01:00+03:00</updated>
     <id>http://tipter.github.com/blog/2013/05/08/does-the-world-needs-another-travel-web-app</id>
-    <content type="html"><![CDATA[<p><img class="left" src="http://tipter.github.com/images/pileofpaper.jpg" width="400" height="400" title="image" alt="images"></p>
+    <content type="html"><![CDATA[<p><img class="left" src="/images/pileofpaper.jpg" width="400" height="400" title="image" alt="images"></p>
 
-<p>Well, as a matter of fact, it does. And you can tell it does from the sheer helplessness one might feel when planning a trip. At least, that&#8217;s the way we always felt when planning our trips. So, we thought of a solution. It is called Tipter.</p>
+<p>Well, as a matter of fact, it does. And you can tell it does from the sheer helplessness one might feel when planning a trip. At least, that's the way we always felt when planning our trips. So, we thought of a solution. It is called Tipter.</p>
 
-<p>How do you plan your trip? There are always so many constraints&#8230;. it could be time, a tight budget, a specific season, the age of the participants, and a lot of other factors. It’s was always a painful and time consuming task, unless you’ve got unlimited budget, all the time in the world, and you are travelling with your identical twin&#8230;. as for rest of us, we could use a little help.</p>
+<p>How do you plan your trip? There are always so many constraints.... it could be time, a tight budget, a specific season, the age of the participants, and a lot of other factors. It’s was always a painful and time consuming task, unless you’ve got unlimited budget, all the time in the world, and you are travelling with your identical twin.... as for rest of us, we could use a little help.</p>
 
 <p>Of course, you can always buy a travel guide, like in the good old days before the Internet changed our lives. Or you can start by using Google or Bing to try to find some bits and pieces of information, hoping the world wide web will be kind enough to answer all your questions such as where to go when you travel to the south of France for three weeks, or what to do with two kids in Thailand. But from our personal and sometimes painful experience, you usually won’t get the right answers.</p>
 
