@@ -4,6 +4,8 @@ title: "Does the world needs another travel web app?"
 date: 2013-05-08 15:01
 comments: true
 author: Ilan
+description:  
+cover: "/images/pileofpaper.jpg"
 categories: [General, About, Blogging, Blog My Trip, Trip Planning]
 ---
 
