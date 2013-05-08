@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Does the world needs another travel web app?"
+title: "Does the world need another travel web app?"
 date: 2013-05-08 15:01
 comments: true
 author: Ilan
