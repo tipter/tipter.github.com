@@ -1,0 +1,34 @@
+---
+layout: post
+title: "Does the world really need another travel web app?"
+date: 2013-05-21 10:01
+comments: true
+author: Ilan
+description:  
+cover: "/images/pileofpaper.jpg"
+categories: [General, About, Blogging, Blog My Trip, Trip Planning]
+---
+
+{% img left /images/pileofpaper.jpg 400 400 'image' 'images' %}
+
+We think so! Have you ever begun planning a trip and felt helpless and overwhelmed by all of the information on the internet? Did you wish you could just get advice from people you knew you could trust? We always feel this way while planning, which is why we came up with a solution: Tipter. 
+
+
+There are so many constraints involved when planning a trip: time, budget, season, age of your traveling companions, and countless others. Planning always takes time, can often be painful, and normally results in compromises and disappointment unless you’ve got unlimited budget, all the time in the world, and you are travelling with your identical twin. As for rest of us, we could use a little help.
+
+You can always buy a travel guide, like in the good old days before the internet. You can utilize search engines and hope that you are asking the right questions to get the best information. But will you really figure out where to go when you travel to the south of France for three weeks, or what to do with two kids in Thailand? Probably not.   
+
+By analyzing our travel planning experience, we believe we have pinpointed the problem.
+Most online sources are focused on the specifics: flights, hotels, and restaurants. However, when you are starting to plan a trip, you are looking for information about the big picture. Finding a hotel or a good restaurant is the easy part. Finding the best route to take, most scenic viewpoint to look at, and the best time of day to find the shortest line at a landmark, however, is much harder. What you need is the combined wisdom of other travelers like you, who have been there and done that, and can tell you all about it.
+
+How does Tipter help you solve this problem?
+
+Tipter is a sophisticated social network of travelers like you. They share their experience, traveling tips, and itineraries. Tipter contains information from people who have visited where you want to go and therefore have gained the invaluable experience that can help you plan your trip. Their information can help you know where to go, what to pack, when to go, and how much time to allot for each location. You will be able to find great local restaurants, viewpoints, places to hang out, and much more. You will be able to sort through information and figure out where you want to spend your time, and where you don’t want to waste it. Tipter takes the tedious and time consuming process of trip planning and turns it into a fun, easy, and social experience. 
+
+When you return from your trip, you come back with great memories, tips, and recommendations. Tipter makes sharing this experience easier than ever. While on the road, you can blog your trip so that you can let people know what you are doing anywhere in the world. When you return from your trip, you can share the “inside knowledge” that you have gained with friends and family, the people that helped you plan the trip, and the whole world! Your tips will set in motion a cycle – others will use your information to plan their own trips, then they will give their own insight. The final product is an up-to-date, informative, and trust-worthy travel guide for the 21st century.  
+
+
+So yes, we do think the world needs another travel web app, because the right one just isn’t out there… yet. Currently, your options are limited to too much information from people you can’t trust, too many advertisements, and not enough information tailored to your needs. We have devoted the last year to building and improving Tipter, so that it can fulfill your needs. Today, we are ecstatic to let you know that our idea has become a reality. We still have a long way to go and have many ideas we have yet to implement for Tipter, but we’ll get there with your help. We have invested a lot of thinking into this application and are confident that we can solve the problems that come with planning a trip, for ourselves and for you. Come aboard and give Tipter a go, because it was made with you in mind.
+ 
+
+
