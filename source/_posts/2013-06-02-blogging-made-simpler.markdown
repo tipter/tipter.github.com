@@ -4,6 +4,7 @@ title: "Travel Blogging made simpler with Tipter’s blogging interface"
 date: 2013-06-02 14:58
 comments: true
 author: Lior 
+cover: "/images/chopy.jpg"
 categories: [General, About, Blogging, Blog My Trip]
 ---
 
