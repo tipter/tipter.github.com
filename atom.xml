@@ -4,7 +4,7 @@
   <title><![CDATA[The Tipter Blog]]></title>
   <link href="http://tipter.github.com/atom.xml" rel="self"/>
   <link href="http://tipter.github.com/"/>
-  <updated>2013-06-02T20:26:03+03:00</updated>
+  <updated>2013-06-16T15:06:56+03:00</updated>
   <id>http://tipter.github.com/</id>
   <author>
     <name><![CDATA[The Tipter Team]]></name>
@@ -12,6 +12,127 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Autocomplete with Elasticsearch and Tire]]></title>
+    <link href="http://tipter.github.com/blog/2013/06/16/autocomplete-with-elasticsearch-and-tire/"/>
+    <updated>2013-06-16T14:09:00+03:00</updated>
+    <id>http://tipter.github.com/blog/2013/06/16/autocomplete-with-elasticsearch-and-tire</id>
+    <content type="html"><![CDATA[<p>We’ve recently seen a need to introduce an autocomplete feature to <a href="http://tipter.com">Tipter</a>. <a href="http://tipter.com">Tipter</a>
+allows its users to search for Trips (a.k.a Travel Blogs) and Tips (the building blocks of Trips). I’ve spent couple of days on this feature, integrating multiple resources until I got the desired result.</p>
+
+<p>This list of resources includes: <a href="http://jontai.me/blog/2013/02/adding-autocomplete-to-an-elasticsearch-search-application/">this great blog post</a>, which refers to an excellent Stack Overflow <a href="http://stackoverflow.com/questions/9421358/filename-search-with-elasticsearch/9432450#9432450">answer</a>, and this <a href="https://github.com/karmi/tire/issues/101">issue</a> on github which explains how to use multifield in Tire. It also includes this <a href="http://masonoise.wordpress.com/2012/08/11/elasticsearch-with-rails-and-tire/">blog post</a>
+which I only found at later stages, definitely could have saved me some time. And of course <a href="http://www.elasticsearch.org/guide/">Elasticsearch</a> guide, <a href="https://github.com/karmi/tire">Tire</a> documentation, and <a href="http://railscasts.com/episodes/306-elasticsearch-part-1">Railscast</a>.</p>
+
+<p>Let’s start by looking at some code. I’ve listed the relevant code snippets of our trip model. Each trip <code>has_many</code> countries which <code>has_one</code> sovereign model that hold the country’s name. Our target (for this post at least…) is to be able to perform autocomplete on the country name, and offer the user relevant travel blogs that include that country.</p>
+
+<pre><code>class Trip &lt; ActiveRecord::Base
+  has_many :countries, dependent: :destroy
+
+  def countries_names
+    sovereign_names = self.countries.map { |c| c.sovereign.nil? ? "" : c.sovereign.name }.join(", ")
+    sovereign_names
+  end
+
+
+  include Tire::Model::Search
+  include Tire::Model::Callbacks
+
+  settings :analysis =&gt; { 
+             :filter =&gt; {
+               :trip_ngram  =&gt; {
+                 "type"     =&gt; "edgeNGram",
+                 "max_gram" =&gt; 15,
+                 "min_gram" =&gt; 2 }
+             },
+             :analyzer =&gt; {
+               :index_ngram_analyzer =&gt; {
+                 "type" =&gt; "custom",
+                 "tokenizer" =&gt; "standard",
+                 "filter" =&gt; [ "standard", "lowercase", "trip_ngram" ] 
+               }, 
+               :search_ngram_analyzer =&gt; {
+                 "type" =&gt; "custom",
+                 "tokenizer" =&gt; "standard",
+                 "filter" =&gt; [ "standard", "lowercase"] 
+               }, 
+             }     
+          } 
+
+
+  mapping do 
+   indexes :countries_names, :type =&gt; 'multi_field', :fields =&gt; {
+      :countries_names =&gt; { :type =&gt; "string"},
+      :"countries_names.autocomplete" =&gt; { :search_analyzer =&gt; "search_ngram_analyzer", :index_analyzer =&gt; "index_ngram_analyzer", :type =&gt; "string"}
+   }
+  end
+
+  def to_indexed_json 
+    to_json(methods: [:countries_names])
+  end
+
+  def self.regular_search(params) 
+    tire.search(load: true) do
+       query {string 'countries_names:' + params }
+    end
+  end
+
+
+  def self.autocomplete(params) 
+    tire.search(load: true) do
+       query {string 'countries_names.autocomplete:' + params }
+    end
+  end
+</code></pre>
+
+<p>So, for a start we&#8217;ll index the <code>countries_names</code> using the <code>mapping</code> block code. We will use the Elasticsearch <code>multi_field</code> type to define &#8220;regular&#8221; <code>countries_names</code> search, and autocomplete one.
+This will allow us to declare two different methods able to be used based on our needs. For the <code>countries_names:autocomplete</code> variant, we declare two types of analyzers <code>:search_analyzer</code> and <code>:index_analyzer</code>.</p>
+
+<p>A great overview of analyzers&#8217; structure and how they work in Elasticsearch can be found <a href="http://jontai.me/blog/2013/02/adding-autocomplete-to-an-elasticsearch-search-application/">here</a>, and I don&#8217;t want to repeat that (and probably introduce errors&#8230; :-) ). However, some of the modifications I did were to use Edge NGram token filter so that n-grams will only be generated from the beginning of the word.</p>
+
+<p>In addition I used different filters for search and indexing where the search filter doesn’t use the Edge NGram filter.</p>
+
+<p>My initial version of the mapping used a single analyzer:</p>
+
+<pre><code> mapping do 
+   indexes :countries_names, :type =&gt; 'multi_field', :fields =&gt; {
+      :countries_names =&gt; { :type =&gt; "string"},
+      :"countries_names.autocomplete" =&gt; { :analyzer =&gt; "index_ngram_analyzer", :type =&gt; "string"}
+   }
+ end
+</code></pre>
+
+<p>While playing with several search queries on the console, I ran this query:</p>
+
+<pre><code>1.9.3-p327 :159 &gt; Trip.autocomplete("mar").map { |t| t.countries_names }
+ ....
+ =&gt; ["Malaysia", "Malaysia"] 
+</code></pre>
+
+<p>The reason it found Malaysia is because of the index containing the following tokens:</p>
+
+<p>[ma], [mal], [mala], [malay], [malays], [malaysi], [malaysia]</p>
+
+<p>Notice I used <code>min_gram</code> of two in order to reduces false positives. Using the same token filter, the search query translates to:</p>
+
+<p>[ma], [mar]</p>
+
+<p>So there&#8217;s a match on the &#8220;ma&#8221;. This can be avoided by using different search analyzer as in the first code snippet. Running the same query gets the expected result:</p>
+
+<pre><code>1.9.3-p327 :163 &gt; Trip.autocomplete("mar").map { |t| t.countries_names }
+ =&gt; [] 
+
+1.9.3-p327 :164 &gt; Trip.autocomplete("ma").map { |t| t.countries_names }
+ ...
+ =&gt; ["Malaysia", "Malaysia"] 
+
+1.9.3-p327 :167 &gt; Trip.regular_search("ma").map { |t| t.countries_names }
+=&gt; [] 
+</code></pre>
+
+<p>There you go. I hope this will save some of you the time I spent on wiring everything together.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Travel Blogging made simpler with Tipter’s blogging interface]]></title>

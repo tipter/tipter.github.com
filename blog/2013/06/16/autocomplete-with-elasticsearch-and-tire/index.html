@@ -5,7 +5,7 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>The Tipter Blog</title>
+  <title>Autocomplete with Elasticsearch and Tire - The Tipter Blog</title>
   <meta name="author" content="The Tipter Team">
 
   
@@ -19,7 +19,7 @@ allows its users to search for Trips (a.k.a Travel Blogs) and Tips &hellip;">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://tipter.github.com/">
+  <link rel="canonical" href="http://tipter.github.com/blog/2013/06/16/autocomplete-with-elasticsearch-and-tire/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -32,11 +32,11 @@ allows its users to search for Trips (a.k.a Travel Blogs) and Tips &hellip;">
 
   
 
-  <meta property="og:url" content="http://tipter.github.com/index.html">
+  <meta property="og:url" content="http://tipter.github.com/blog/2013/06/16/autocomplete-with-elasticsearch-and-tire/">
 <meta property="og:type" content="website" />
 
-<meta property="og:title" content="The Tipter Blog">
-<meta property="og:description" content="The Tipter blog">
+<meta property="og:title" content="Autocomplete with Elasticsearch and Tire">
+<meta property="og:description" content="">
  
 
 
@@ -72,15 +72,12 @@ allows its users to search for Trips (a.k.a Travel Blogs) and Tips &hellip;">
 </nav>
   <div id="main">
     <div id="content">
-      <div class="blog-index">
+      <div>
+<article class="hentry" role="article">
   
-  
-  
-    <article>
-      
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2013/06/16/autocomplete-with-elasticsearch-and-tire/">Autocomplete With Elasticsearch and Tire</a></h1>
+      <h1 class="entry-title">Autocomplete With Elasticsearch and Tire</h1>
     
     
       <p class="meta">
@@ -98,14 +95,14 @@ allows its users to search for Trips (a.k.a Travel Blogs) and Tips &hellip;">
 
 <time datetime="2013-06-16T14:09:00+03:00" pubdate data-updated="true">Jun 16<span>th</span>, 2013</time>
         
-         | <a href="/blog/2013/06/16/autocomplete-with-elasticsearch-and-tire/#disqus_thread">Comments</a>
+         | <a href="#disqus_thread">Comments</a>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p>We’ve recently seen a need to introduce an autocomplete feature to <a href="http://tipter.com">Tipter</a>. <a href="http://tipter.com">Tipter</a>
+<div class="entry-content"><p>We’ve recently seen a need to introduce an autocomplete feature to <a href="http://tipter.com">Tipter</a>. <a href="http://tipter.com">Tipter</a>
 allows its users to search for Trips (a.k.a Travel Blogs) and Tips (the building blocks of Trips). I’ve spent couple of days on this feature, integrating multiple resources until I got the desired result.</p>
 
 <p>This list of resources includes: <a href="http://jontai.me/blog/2013/02/adding-autocomplete-to-an-elasticsearch-search-application/">this great blog post</a>, which refers to an excellent Stack Overflow <a href="http://stackoverflow.com/questions/9421358/filename-search-with-elasticsearch/9432450#9432450">answer</a>, and this <a href="https://github.com/karmi/tire/issues/101">issue</a> on github which explains how to use multifield in Tire. It also includes this <a href="http://masonoise.wordpress.com/2012/08/11/elasticsearch-with-rails-and-tire/">blog post</a>
@@ -219,75 +216,16 @@ This will allow us to declare two different methods able to be used based on our
 
 <p>There you go. I hope this will save some of you the time I spent on wiring everything together.</p>
 </div>
-  
-  
 
 
-    </article>
-  
-  
-    <article>
+  <footer>
+    <p class="meta">
       
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/06/02/blogging-made-simpler/">Travel Blogging Made Simpler With Tipter’s Blogging Interface</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
   
 
+<span class="byline author vcard">Posted by <span class="fn">Ilan</span></span>
 
-<time datetime="2013-06-02T14:58:00+03:00" pubdate data-updated="true">Jun 2<span>nd</span>, 2013</time>
-        
-         | <a href="/blog/2013/06/02/blogging-made-simpler/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><img class="left" src="/images/chopy.jpg" width="420" height="320" title="image" alt="images"></p>
-
-<p><a href="http://tipter.com">Tipter</a>’s blogging interface is one of the features we like most about the app, and we want to tell you what makes it so special.
-You are probably familiar with today’s popular blogging systems. Many of them are built on WordPress or a similar software. We have no problem with WordPress, but we believe that it has some flaws that hurt the functionality of your blog. For instance, we aren’t a fan of the “Preview” button. We believe that, when you edit your blog, you should be able to see the content change in real time. Why should you have to guess how your blog is going to look before you publish it? Why should you have to troubleshoot issues, because you can’t edit your page and see the final product at the same time?</p>
-
-<p>We don’t know the answer to these questions, so we decided to simplify the process for you.</p>
-
-<p>With <a href="http://tipter.com">Tipter</a>, you don’t have to guess. Your text will look exactly as it did on the edit screen – mainly because you edit and publish in the same window. Just open a new tip, write a recommendation or share a story, and click outside the tip’s window. <a href="http://tipter.com">Tipter</a> will save your text automatically, and it will look exactly as it did when editing. Want to add, change, or delete something? No problem at all. Just click on the tip itself and the edit bar will appear on the top of the window. Edit to your heart’s desire, click outside the window, and your tip is automatically updated.</p>
-
-<p><img src="/images/blog2_edit.png" title="'Tip edit'" ></p>
-
-<p>And of course, you can add a picture with the photo button use bold, italic or underline fonts, make a list, align the text left, right, or to the middle, and use any of the other features on the edit bar. You can also choose a subject for the tip – food, sightseeing, camping, nightlife, and many other options.</p>
-
-<p><img src="/images/blog2_tt.png" title="'Tip type selection'" ></p>
-
-<p>Choosing a subject for your tip will help other users look for it and help you get some Karma on the site’s rating system. But, that’s a matter for the next post on <a href="http://tipter.com">Tipter</a>’s blog.</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
       
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/05/21/does-the-world-need-another-travel-web-app/">Does the World Really Need Another Travel Web App?</a></h1>
-    
-    
-      <p class="meta">
-        
 
 
 
@@ -299,46 +237,48 @@ You are probably familiar with today’s popular blogging systems. Many of them 
   
 
 
-<time datetime="2013-05-21T10:01:00+03:00" pubdate data-updated="true">May 21<span>st</span>, 2013</time>
-        
-         | <a href="/blog/2013/05/21/does-the-world-need-another-travel-web-app/#disqus_thread">Comments</a>
-        
-      </p>
+<time datetime="2013-06-16T14:09:00+03:00" pubdate data-updated="true">Jun 16<span>th</span>, 2013</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/rails/'>Rails</a>, <a class='category' href='/blog/categories/technical/'>Technical</a>
+  
+</span>
+
+
+    </p>
     
-  </header>
-
-
-  <div class="entry-content"><p><img class="left" src="/images/pileofpaper.jpg" width="400" height="400" title="image" alt="images"></p>
-
-<p>We think so! Have you ever begun planning a trip and felt helpless and overwhelmed by all of the information on the internet? Did you wish you could just get advice from people you knew you could trust? We always feel this way while planning, which is why we came up with a solution: <a href="http://tipter.com">Tipter</a>.</p>
-
-<p>There are so many constraints involved when planning a trip: time, budget, season, age of your traveling companions, and countless others. Planning always takes time, can often be painful, and normally results in compromises and disappointment unless you’ve got unlimited budget, all the time in the world, and you are travelling with your identical twin. As for rest of us, we could use a little help.</p>
-
-<p>You can always buy a travel guide, like in the good old days before the internet. You can utilize search engines and hope that you are asking the right questions to get the best information. But will you really figure out where to go when you travel to the south of France for three weeks, or what to do with two kids in Thailand? Probably not.</p>
-
-<p>By analyzing our travel planning experience, we believe we have pinpointed the problem.
-Most online sources are focused on the specifics: flights, hotels, and restaurants. However, when you are starting to plan a trip, you are looking for information about the big picture. Finding a hotel or a good restaurant is the easy part. Finding the best route to take, most scenic viewpoint to look at, and the best time of day to find the shortest line at a landmark, however, is much harder. What you need is the combined wisdom of other travelers like you, who have been there and done that, and can tell you all about it.</p>
-
-<p>How does <a href="http://tipter.com">Tipter</a> help you solve this problem?</p>
-
-<p><a href="http://tipter.com">Tipter</a> is a sophisticated social network of travelers like you. They share their experience, traveling tips, and itineraries. <a href="http://tipter.com">Tipter</a> contains information from people who have visited where you want to go and therefore have gained the invaluable experience that can help you plan your trip. Their information can help you know where to go, what to pack, when to go, and how much time to allot for each location. You will be able to find great local restaurants, viewpoints, places to hang out, and much more. You will be able to sort through information and figure out where you want to spend your time, and where you don’t want to waste it. <a href="http://tipter.com">Tipter</a> takes the tedious and time consuming process of trip planning and turns it into a fun, easy, and social experience.</p>
-
-<p>When you return from your trip, you come back with great memories, tips, and recommendations. <a href="http://tipter.com">Tipter</a> makes sharing this experience easier than ever. While on the road, you can blog your trip so that you can let people know what you are doing anywhere in the world. When you return from your trip, you can share the “inside knowledge” that you have gained with friends and family, the people that helped you plan the trip, and the whole world! Your tips will set in motion a cycle – others will use your information to plan their own trips, then they will give their own insight. The final product is an up-to-date, informative, and trust-worthy travel guide for the 21st century.</p>
-
-<p>So yes, we do think the world needs another travel web app, because the right one just isn’t out there… yet. Currently, your options are limited to too much information from people you can’t trust, too many advertisements, and not enough information tailored to your needs. We have devoted the last year to building and improving <a href="http://tipter.com">Tipter</a>, so that it can fulfill your needs. Today, we are ecstatic to let you know that our idea has become a reality. We still have a long way to go and have many ideas we have yet to implement for <a href="http://tipter.com">Tipter</a>, but we’ll get there with your help. We have invested a lot of thinking into this application and are confident that we can solve the problems that come with planning a trip, for ourselves and for you. Come aboard and give <a href="http://tipter.com">Tipter</a> a go, because it was made with you in mind.</p>
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://tipter.github.com/blog/2013/06/16/autocomplete-with-elasticsearch-and-tire/" data-via="tipter_" data-counturl="http://tipter.github.com/blog/2013/06/16/autocomplete-with-elasticsearch-and-tire/" >Tweet</a>
+  
+  
+  <div class="g-plusone" data-size="medium"></div>
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
 </div>
-  
-  
 
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2013/06/02/blogging-made-simpler/" title="Previous Post: Travel Blogging made simpler with Tipter’s blogging interface">&laquo; Travel Blogging made simpler with Tipter’s blogging interface</a>
+      
+      
+    </p>
+  </footer>
+</article>
 
-    </article>
-  
-  <div class="pagination">
-    
-    <a href="/blog/archives">Blog Archives</a>
-    
-  </div>
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 </div>
+  </section>
+
+</div>
+
 <aside class="sidebar">
   
     <section>
@@ -366,7 +306,7 @@ Most online sources are focused on the specifics: flights, hotels, and restauran
 <section>
   <h1>GitHub Repos</h1>
   <ul id="gh_repos">
-    <li class="loading">Status updating&#8230;</li>
+    <li class="loading">Status updating...</li>
   </ul>
   
   <a href="https://github.com/tipter">@tipter</a> on GitHub
@@ -396,7 +336,7 @@ Most online sources are focused on the specifics: flights, hotels, and restauran
 <section>
   <h1>Latest Tweets</h1>
   <ul id="tweets">
-    <li class="loading">Status updating&#8230;</li>
+    <li class="loading">Status updating...</li>
   </ul>
   <script type="text/javascript">
     $.domReady(function(){
@@ -416,6 +356,7 @@ Most online sources are focused on the specifics: flights, hotels, and restauran
   
 </aside>
 
+
     </div>
   </div>
   <footer role="contentinfo"><p>
@@ -432,7 +373,10 @@ Most online sources are focused on the specifics: flights, hotels, and restauran
       var disqus_shortname = 'thetipterblog';
       
         
-        var disqus_script = 'count.js';
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://tipter.github.com/blog/2013/06/16/autocomplete-with-elasticsearch-and-tire/';
+        var disqus_url = 'http://tipter.github.com/blog/2013/06/16/autocomplete-with-elasticsearch-and-tire/';
+        var disqus_script = 'embed.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
